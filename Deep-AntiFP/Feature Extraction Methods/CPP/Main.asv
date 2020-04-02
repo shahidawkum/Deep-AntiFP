@@ -1,0 +1,28 @@
+clc
+clear all
+ feature_train=[];
+ 
+
+[ Nam_seq_train seqdata_train] = fastaread('Positive.txt');
+
+
+
+Total_Seq_train=size(Nam_seq_train,2);
+
+    for i=724:Total_Seq_train
+        i
+       seq=seqdata_train(i);
+       seq=cell2mat(seq);
+       feature_train=[feature_train ; physiochem11_AA(seq)];
+    end
+    
+    
+     Antifp_physiochemical_9=feature_train;
+    
+    save Antifp_physiochemical_9 Antifp_physiochemical_9;
+    
+   
+   
+
+
+
